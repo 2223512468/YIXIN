@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.0'
+    }
+}
+apply plugin: 'com.android.library'
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.4.0'
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['java']
+            resources.srcDirs = ['java']
+            aidl.srcDirs = ['java']
+            renderscript.srcDirs = ['java']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+
+}
